@@ -1,4 +1,4 @@
-# 🌟 [CHIA SẺ CỘNG ĐỒNG] GÓI NÂNG CẤP ALL-IN-ONE "ULTIMATE PRO & LUXURY v1.0" CHO TRIMUI SMART PRO S (TG5050)
+# 🌟 [CHIA SẺ CỘNG ĐỒNG] GÓI NÂNG CẤP ALL-IN-ONE "ULTIMATE PRO & LUXURY v1.1" CHO TRIMUI SMART PRO S (TG5050)
 
 > **Tương thích:** Dành riêng cho **Trimui Smart Pro S (Mã máy `TG5050` - Chip 8 nhân Allwinner A523)** chạy Stock OS (`v1.0.0` hoặc `v1.0.2`).  
 > **An toàn tuyệt đối:** Giữ nguyên 100% ROM, File Save và hỗ trợ hoàn hảo các máy có cài sẵn gói game Việt hóa (`LoongMate`).
@@ -71,10 +71,15 @@
   * **TermoTri50 & Led4TspS:** Theo dõi nhiệt độ/xung nhịp CPU và tùy biến hiệu ứng đèn LED RGB 2 cần Analog.
   * **TSPS Pro Setup:** Ứng dụng kích hoạt lại toàn bộ cấu hình tối ưu chỉ với 1 nút bấm ngay trên máy.
 
-### 14. Giữ nguyên Cài đặt khi Flash Firmware mới (Settings Vault) — Tương thích `v1.0.2`
-* Flash firmware sẽ xóa sạch bộ nhớ trong (`/mnt/UDISK`: màu, âm lượng, độ sáng, hiệu chỉnh cần Analog) và phân vùng hệ thống (danh sách Wi-Fi đã lưu). Gói TSPS tự **sao lưu các cài đặt này lên thẻ nhớ** (`System/etc/tsps_persist`) mỗi 5 phút.
-* Lần bật máy đầu tiên sau khi flash, máy **tự khôi phục** toàn bộ: màu DE350, âm lượng loa `29/31`, độ sáng, hiệu chỉnh cần Analog, Wi-Fi đã lưu... và **tự chạy lại toàn bộ bản vá TSPS** cho firmware mới — không cần cài lại.
-* Firmware `1.0.2` đã chuyển sang điều khiển âm lượng loa qua `speakergain` trong `system.json`; gói đã cập nhật để tăng âm lượng loa đúng cách trên `1.0.2` (vẫn tương thích `1.0.0`/`1.0.1`).
+### 14. Flash Firmware mới KHÔNG mất gì (Settings Vault + Health Check) — Tương thích `v1.0.2`
+* **Mọi thứ của TSPS nằm trên thẻ nhớ** (Apps, Emus, tinh chỉnh core & controller RetroArch, PPSSPP, DraStic, Flycast, Themes, BEST, inputd...) nên flash firmware không đụng tới. Các bản vá phần cứng (60Hz, RAM, GPU, âm thanh, inputd, Wi-Fi Guardian) được **tự áp lại mỗi lần bật máy**; khi phát hiện firmware mới, toàn bộ cài đặt TSPS **tự chạy lại 1 lần**.
+* Phần firmware xóa khi flash được **sao lưu tự động lên thẻ nhớ mỗi 5 phút** (`System/etc/tsps_persist`) và **tự khôi phục** ở lần bật máy đầu tiên sau flash:
+  * Toàn bộ `/mnt/UDISK`: màu DE350, âm lượng, độ sáng, ngôn ngữ, chủ đề, **hiệu chỉnh cần Analog**, chế độ hiệu năng Ports, dữ liệu app.
+  * **Wi-Fi đã lưu** và **tay cầm Bluetooth đã ghép đôi**.
+  * `system.json` được gộp thông minh: giữ giá trị của bạn + giữ tính năng mới của firmware.
+* **App `TSPS Health Check`:** kiểm tra 16 hạng mục, báo `x/16 OK`; nếu có lỗi bấm `Y` để áp lại tất cả. Chi tiết: `System/logs/tsps_status.txt`.
+* Firmware `1.0.2` điều khiển âm lượng loa qua `speakergain`; gói đã cập nhật để tăng loa đúng cách (vẫn tương thích `1.0.0`/`1.0.1`).
+* **Sửa xung đột với LoongMate / Tailscale:** bản v1.0 ghi đè file tự khởi động `loongmate.sh` và tắt agent LoongMate khi thoát app. Bản mới dùng file riêng `tsps_guardian.sh`, **tự trả lại** file gốc của LoongMate và gỡ đoạn mã gây xung đột.
 
 ### 15. Wi-Fi Guardian — Sửa lỗi "treo màn hình tìm Wi-Fi sau vài giờ dùng"
 * Kiểm tra sức khỏe Wi-Fi mỗi 30 giây: nếu `wpa_supplicant` bị treo/chết (lỗi khiến màn tìm Wi-Fi đứng im, trước đây phải flash lại firmware mới hết), máy **tự khởi động lại Wi-Fi** sau ~90 giây, không cần flash.
@@ -111,8 +116,8 @@
 3. Nhấp đúp chạy file **`Cai_Dat_1Click_Qua_Cap_USB.bat`** trong thư mục giải nén và bấm phím bất kỳ — công cụ sẽ tự động đẩy toàn bộ file vào máy và kích hoạt trong 1 nốt nhạc!
 
 ### (Tùy chọn) Nâng cấp Firmware gốc lên bản `v1.0.2`
-* Kiểm tra trong `Settings -> System -> Device Info`, nếu máy bạn đang ở `1.0.0`:
-  1. Copy file `trimui_tg5050.awimg` trong thư mục **`Optional_Firmware_v1.0.2`** vào thư mục gốc của thẻ nhớ MicroSD.
+* Kiểm tra trong `Settings -> System -> Device Info`, nếu máy bạn đang ở `1.0.0` hoặc `1.0.1`:
+  1. Tải file `trimui_tg5050.awimg` ở mục **Releases** (hoặc thư mục **`Optional_Firmware_v1.0.2`**) rồi copy vào thư mục gốc của thẻ nhớ MicroSD.
   2. Tắt nguồn máy hoàn toàn.
   3. Giữ tổ hợp **`Nút Giảm Âm Lượng (Vol -)` + `Nút Nguồn (Power)`** khoảng 5 giây cho đến khi hiện thanh xanh lá cây cập nhật, đợi máy tự khởi động lại lên `1.0.2` rồi xóa file `trimui_tg5050.awimg` trên thẻ nhớ đi là xong.
 
@@ -120,13 +125,17 @@
 Gói **không chứa BIOS/ROM** vì lý do bản quyền. Một số hệ máy (PS1, GBA boot logo, NeoGeo, Sega CD, PC Engine CD, Dreamcast, MSX...) cần BIOS:
 1. **Cách nhanh nhất:** tải gói **CrossMix-OS / Surwish CrossMix** chính thức, mở thư mục `BIOS` trong gói đó.
 2. Chép **toàn bộ file bên trong** `BIOS` vào thẻ nhớ TSPS tại: **`RetroArch/.retroarch/system/`** (không phải thư mục `/BIOS` ở gốc thẻ).
+   * BIOS cho emulator chạy riêng (không qua RetroArch) đặt ở: **Saturn** `Emus/SS/yabasanshiro/saturn_bios.bin` · **Dreamcast** `Emus/DC/flycast_2.5/bios/` (`dc_boot.bin`, `dc_flash.bin`) · **NDS** `Emus/NDS/drastic/system/`.
+   * Có BIOS thì **logo khởi động gốc** tự hiện: Sony PlayStation (PS1), Nintendo GBA / GB / GBC.
 3. Một số file quan trọng (đặt đúng tên, đúng chữ hoa/thường): `scph5501.bin`, `scph1001.bin` (PS1) · `gba_bios.bin` (GBA) · `neogeo.zip` (NeoGeo/FBNeo) · `bios_CD_U.bin`, `bios_CD_E.bin`, `bios_CD_J.bin` (Sega CD) · `syscard3.pce` (PC Engine CD) · `dc/dc_boot.bin`, `dc/dc_flash.bin` (Dreamcast).
 
 ## 🔁 Khi nâng cấp / flash Firmware mới
 * Cứ flash bình thường. Lần bật máy đầu tiên sau flash sẽ **lâu hơn ~20 giây** vì gói tự khôi phục cài đặt và áp lại bản vá — các lần sau khởi động bình thường (~20 giây).
 * Nhớ **xóa file `trimui_tg5050.awimg` khỏi thẻ nhớ** sau khi cập nhật xong.
-* Nếu cần áp lại thủ công: **App → `TSPS Pro Setup`**.
+* Sau khi máy lên, mở **App → `TSPS Health Check`** để xác nhận mọi thứ đã được khôi phục (`16/16 OK`). Nếu có mục lỗi, bấm `Y` để áp lại.
+* Dòng *LƯU Ý* màu vàng về cần Analog nghĩa là bạn **chưa từng** hiệu chỉnh cần: vào **Settings → hiệu chỉnh cần Analog** một lần, từ đó gói sẽ tự giữ lại qua mọi lần flash.
 
 ## 🙏 Ghi công
 * **CrossMix-OS** (cizia64 & cộng đồng) và **Surwish**: `trimui_inputd` Universal Optimized, EmuCleaner, Random Game, Terminal/Music/Ebook launcher, `infoscreen`.
-* **Gmu Music Player**, **PixelReader**, **SimpleTerminal**, **PortMaster** (`gptokeyb`), **DejaVu Fonts** — thuộc về tác giả tương ứng, giữ nguyên giấy phép gốc.
+* **Gmu Music Player**, **PixelReader**, **SimpleTerminal**, **PortMaster** (`gptokeyb`, GPL-2.0), **DejaVu Fonts** — thuộc về tác giả tương ứng.
+* Các thành phần CrossMix được phân phối lại **nguyên vẹn** theo giấy phép **GPL-3.0** của [CrossMix-OS](https://github.com/cizia64/CrossMix-OS) (đã đối chiếu từng byte với kho chính thức). Chi tiết & mã nguồn: `System/bin/cmtools/THIRD_PARTY_NOTICES.txt`.

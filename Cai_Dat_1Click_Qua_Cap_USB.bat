@@ -4,7 +4,7 @@ title TRIMUI SMART PRO S (TG5050) - ULTIMATE PRO & LUXURY 1-CLICK INSTALLER
 color 0B
 
 echo ============================================================================
-echo    TRIMUI SMART PRO S (TG5050) - GOI NANG CAP ALL-IN-ONE PRO ^& LUXURY v1.0
+echo    TRIMUI SMART PRO S (TG5050) - GOI NANG CAP ALL-IN-ONE PRO ^& LUXURY v1.1
 echo ============================================================================
 echo.
 echo  Huong dan ket noi:
@@ -36,7 +36,7 @@ if exist "%SDROOT%\Best" "%ADB%" push "%SDROOT%\Best" /mnt/SDCARD/
 
 echo.
 echo [3/4] Dang kich hoat ban va 60.01Hz, Am thanh 3 tang DAC, Do hoa True Vivid RGB ^& Pro/Luxury Tweaks...
-"%ADB%" shell "chmod +x /mnt/SDCARD/System/starts/tsps_pro_setup.sh /mnt/SDCARD/System/starts/loongmate.sh && /bin/sh /mnt/SDCARD/System/starts/tsps_pro_setup.sh --force"
+"%ADB%" shell "chmod +x /mnt/SDCARD/System/starts/tsps_pro_setup.sh /mnt/SDCARD/System/starts/tsps_guardian.sh && /bin/sh /mnt/SDCARD/System/starts/tsps_pro_setup.sh --force"
 
 echo.
 echo [4/4] Dong bo du lieu va khoi dong lai giao dien (nap mau/am thanh moi)...
