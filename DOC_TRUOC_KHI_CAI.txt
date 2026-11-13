@@ -79,6 +79,7 @@
   * `system.json` được gộp thông minh: giữ giá trị của bạn + giữ tính năng mới của firmware.
 * **App `TSPS Health Check`:** kiểm tra 16 hạng mục, báo `x/16 OK`; nếu có lỗi bấm `Y` để áp lại tất cả. Chi tiết: `System/logs/tsps_status.txt`.
 * Firmware `1.0.2` điều khiển âm lượng loa qua `speakergain`; gói đã cập nhật để tăng loa đúng cách (vẫn tương thích `1.0.0`/`1.0.1`).
+* **Sửa shader làm nét / CRT:** bản v1.0 tạo preset shader trỏ sai thư mục nên shader không được áp dụng; bản mới sửa đường dẫn và tự sửa các preset cũ khi bật máy.
 * **Sửa xung đột với LoongMate / Tailscale:** bản v1.0 ghi đè file tự khởi động `loongmate.sh` và tắt agent LoongMate khi thoát app. Bản mới dùng file riêng `tsps_guardian.sh`, **tự trả lại** file gốc của LoongMate và gỡ đoạn mã gây xung đột.
 
 ### 15. Wi-Fi Guardian — Sửa lỗi "treo màn hình tìm Wi-Fi sau vài giờ dùng"
