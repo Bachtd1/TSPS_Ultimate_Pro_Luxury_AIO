@@ -1,0 +1,6 @@
+# Large binaries are distributed via GitHub Releases
+SDCARD_Root/
+Tools/
+Optional_Firmware_v1.0.1/
+*.awimg
+*.zip

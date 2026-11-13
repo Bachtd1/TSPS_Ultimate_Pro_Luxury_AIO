@@ -1,0 +1,94 @@
+# 🌟 [CHIA SẺ CỘNG ĐỒNG] GÓI NÂNG CẤP ALL-IN-ONE "ULTIMATE PRO & LUXURY v1.0" CHO TRIMUI SMART PRO S (TG5050)
+
+> **Tương thích:** Dành riêng cho **Trimui Smart Pro S (Mã máy `TG5050` - Chip 8 nhân Allwinner A523)** chạy Stock OS (`v1.0.0` hoặc `v1.0.1`).  
+> **An toàn tuyệt đối:** Giữ nguyên 100% ROM, File Save và hỗ trợ hoàn hảo các máy có cài sẵn gói game Việt hóa (`LoongMate`).
+
+---
+
+## 🔥 TỔNG HỢP 14 HẠNG MỤC NÂNG CẤP TRONG GÓI ALL-IN-ONE NÀY
+
+### 1. Bản vá phần cứng Màn hình chuẩn `60.01 Hz` & Khóa xung RAM `1200 MHz` (Chống nháy/xé hình tuyệt đối)
+* **Fix lỗi 62.94 Hz của Stock OS:** Màn hình gốc của Trimui Smart Pro S bị lệch xung quét ở mức `62.94 Hz`, gây giật khung hình định kỳ (micro-stutter) và tiếng nổ lụp bụp khi chơi các hệ máy 60fps. Bản vá can thiệp trực tiếp vào thanh ghi phần cứng (`DSI_VT` & `TCON_VT`) đưa màn hình về đúng **`60.01 Hz`**, kèm tiến trình canh gác tự động khôi phục sau khi máy thức dậy từ chế độ Sleep.
+* **Khóa xung bộ điều khiển RAM DDR4 (`3120000.dmcfreq = performance @ 1200 MHz`):** Triệt tiêu hoàn toàn lỗi tụt xung RAM xuống `150 MHz` gây nháy/giật màn hình trên các hệ máy 8-bit (`GB`, `GBC`, `NES`...) và ngoài giao diện chính.
+
+### 2. Cân chỉnh Màu Phần cứng `OLED-Like` (Chip Hiển thị Allwinner DE350)
+* Tinh chỉnh trực tiếp bộ xử lý màu phần cứng (`Saturation: 6`, `Contrast: 6`, `Temperature: 9` trong `system.json`) giúp màn hình IPS trong trẻo, chiều sâu màu đen đậm và rực rỡ tiệm cận màn OLED trên toàn bộ giao diện, giả lập và PC Ports mà **không tốn 1% tải GPU nào**.
+
+### 3. Mở khóa Sức mạnh 8 Nhân CPU (`2.16 GHz`) + GPU Mali-G57 (`888 MHz`) + Đọc trước Thẻ nhớ `2 MB`
+* Đồng bộ cấu hình xung nhịp cho toàn bộ **35 hệ máy giả lập**:
+  * **Các hệ 2D (8-bit / 16-bit / Arcade):** Chạy 6 nhân (`4 LITTLE + 2 BIG` tới `1.8 GHz`), GPU `300–744 MHz` mát mẻ, mượt tuyệt đối.
+  * **Các hệ 3D nặng (PS1, PSP, N64, NDS, Dreamcast, Saturn):** Khóa governor `performance` (`1.41 GHz LITTLE` + `1.99–2.16 GHz BIG`) và mở trần GPU Mali-G57 lên **`600–888 MHz`**.
+* **Tăng bộ đệm đọc trước thẻ nhớ (`read_ahead_kb = 2048 KB`, `nr_requests = 256`) + Tắt mô phỏng trễ đĩa UMD (`IOTimingMethod = 0`):** Triệt tiêu hoàn toàn hiện tượng khựng âm thanh khi chuyển cảnh trong *God of War: Ghost of Sparta / Chains of Olympus* (PSP) và *Dreamcast*.
+
+### 4. Mở khóa Hiệu năng Tối đa cho toàn bộ Game `PC Ports`
+* Tự động kích hoạt script `tsps_port_perf.sh` (`2.16 GHz` BIG Core + `888 MHz` GPU + `1200 MHz` DDR4 + `2 MB` Read-Ahead) khi khởi chạy mọi game trong tab **Ports** (*GTA III*, *TMNT: Shredder's Revenge*, *Stardew Valley*, *Celeste*, *Balatro*, *Sonic Mania*...), giúp giữ vững 60 FPS ổn định.
+
+### 5. Nâng cấp Đồ họa "True Vivid RGB" & Độ phân giải 2x HD 3D
+* **Trả lại màu gốc tươi rực rỡ 100% (Vivid sRGB) cho GBA / GBC / GB:** Tắt bộ lọc làm bạc màu giả lập màn hình không đèn nền năm 2001, kết hợp khung viền máy trong suốt (`gba-none`, `gbc`, `fc-none`, `sfc-none`) không phủ lưới xám làm tối màn hình.
+* **Shader Vulkan (`sharp-bilinear` & `zfast-crt`):** Làm mịn điểm ảnh sắc nét cho máy cầm tay mà không làm nhòe hay tối hình; tái tạo bóng hình CRT cổ điển cho hệ máy thùng Arcade.
+* **Mở khóa 2x HD 3D cho Nintendo DS (`DraStic`) & PlayStation 1 (`SwanStation`):** Nâng gấp đôi độ phân giải dựng hình 3D nội tại, bật `threaded_3d = 1` và tắt `frameskip` giúp hình ảnh 3D sắc nét ở 60fps.
+
+### 6. Nâng cấp Âm thanh 3 Tầng (Hardware DAC High-Output + Sinc Quality 4 + Core Filters)
+* **Tầng 1 (Phần cứng Chip DAC Allwinner A523):** Tắt bộ giới hạn âm lượng phần cứng (`DRC = 0` vốn dìm âm lượng xuống `-20dB`), nâng **Digital DAC Volume lên `168` (`+4dB`)** và **Analog Lineout Gain lên `29/31` (`100%`)** — âm lượng loa ngoài to gấp đôi, trong trẻo và dày tiếng.
+* **Tầng 2 (RetroArch Audio Engine):** Chuyển sang luồng `alsathread`, giảm độ trễ xuống `48ms` và nâng bộ lấy mẫu âm thanh lên **`Sinc Polyphase Quality 4`**.
+* **Tầng 3 (Lõi giả lập):**
+  * **GBA (`mGBA`):** Bật bộ lọc khử tiếng xì/rè đặc trưng của GBA (`low_pass_filter = 60%`).
+  * **PS1 (`PCSX-ReARMed`):** Mở khóa lại **100% nhạc nền đĩa CD và giọng lồng tiếng cắt cảnh XA** + nội suy âm thanh chuẩn **Sony Gaussian SPU** + chạy luồng âm thanh riêng (`spu_thread = enabled`).
+  * **NES & SNES:** Nâng chất lượng âm thanh FCEUmm lên mức tối đa `Very High` và bật lọc âm trầm chip Sony SPC700 cho SNES.
+
+### 7. Kích hoạt "Zero Input Lag" (`Preemptive Frames = 1`)
+* Cắt bỏ **16.6ms (1 khung hình)** độ trễ nội tại của game trên các hệ `NES`, `SNES`, `GB`, `GBC`, `Mega Drive` — bấm nút là nhân vật phản hồi tức thì như chơi trên TV CRT.
+
+### 8. Đồng bộ 16 Profile Tay cầm Chuẩn từng Hệ máy (Đã Audit toàn bộ 35 hệ máy)
+* Tự động chuyển sơ đồ nút bấm và tên tay cầm đúng theo từng hãng máy (**Nintendo B-A/Y-X** cho GB/GBA/NES/SNES/NDS/N64, **Sony Cross/Circle** cho PS1/PSP, **Sega 6-Button Pad** cho Mega Drive/Saturn/Dreamcast, **Arcade Stick** cho thùng game...) thay vì nhận tất cả là tay cầm Xbox 360.
+
+### 9. Logo Khởi động Nguyên bản (Sony PS1 & Nintendo GBA) + Fix Chống Copy `LibCrypt` (*Dino Crisis*) + NeoGeo `UNIBIOS` + 12.839 Mã Cheat
+* **Authentic Console Boot Intros:** Khôi phục BIOS gốc để mỗi lần vào game **PS1** và **GBA** đều hiển thị logo khởi động và âm thanh huyền thoại của **Sony Computer Entertainment** và **Nintendo**.
+* **Fix lỗi treo *Dino Crisis (Europe)* trên PS1:** Tích hợp sẵn file giải mã subchannel chuẩn Redump (`Dino Crisis (Europe).sbi`) vượt qua khóa bảo vệ chống sao chép **Sony LibCrypt v2**.
+* **NeoGeo Universe BIOS (`UNIBIOS`):** Bấm `Start + Select` ngay trong lúc chơi *Metal Slug / King of Fighters / Samurai Shodown* để bật menu Cheat chính chủ, đổi vùng máy thùng / Console Uncensored.
+* **12.839 File Cheat Libretro:** Tích hợp sẵn toàn bộ kho mã Cheat cho GBA, GBC, GB, NES, SNES, Mega Drive, PS1.
+
+### 10. Bộ 36 Logo Hệ máy `100% Transparent` (Tách nền ô vuông, chỉ giữ chữ/biểu tượng)
+* Toàn bộ **36 icon hệ máy (`ic-*.png`)** ngoài màn hình chính đã được xử lý tách bỏ hoàn toàn khung ô vuông màu bằng thuật toán **Color Unmatting**, giữ lại **100% tên/logo hệ máy sắc nét có đổ bóng nhẹ** nổi bật trên nền tối và khôi phục trọn bộ hình nền hệ máy gốc (`bg-*.png`).
+
+### 11. Kích hoạt Tab `BEST` — 3 Bộ Sưu Tập Tuyển Chọn Tự Động (Có sẵn Ảnh Bìa Boxart)
+* Tự động quét thẻ nhớ và tạo 3 bộ sưu tập sang trọng ngay tại tab **BEST** ngoài màn hình chính:
+  1. **🇻🇳 Game Việt Hóa** (Tổng hợp toàn bộ game Tiếng Việt trên mọi hệ máy)
+  2. **🔥 Hành Động & Đối Kháng** (*God of War*, *Tekken*, *Metal Slug*, *Street Fighter*, *Mega Man*, *Contra*, *Castlevania*, *Dino Crisis*, *Resident Evil*...)
+  3. **🐉 Pokémon & Nhập Vai (RPG)** (*Pokémon*, *Final Fantasy*, *Zelda*, *Chrono Trigger*, *Fire Emblem*, *Golden Sun*, *Dragon Quest*, *Kingdom Hearts*...)
+* Đi kèm ứng dụng **`Refresh Best Collections`** trong tab `App` để cập nhật lại danh sách bất cứ khi nào bạn chép thêm game mới.
+
+### 12. Tích hợp sẵn `RetroAchievements` (Săn Cúp Thành Tựu Quốc Tế)
+* Đã cấu hình sẵn thông báo Popup huy hiệu, âm thanh mở khóa cúp và chế độ **Non-Hardcore** (vừa săn cúp vừa dùng được Save State/Fast Forward bình thường) trên cả **RetroArch** lẫn **PPSSPP**.
+* Chỉ cần mở file `RetroAchievements.txt` ở thư mục gốc thẻ nhớ, điền `username=` và `password=` tài khoản [retroachievements.org](https://retroachievements.org) của bạn là máy tự động đăng nhập khi bật nguồn!
+
+### 13. Trọn bộ Ứng dụng Tiện ích + 92 Themes Giao diện
+* **Ứng dụng trong tab `App`:**
+  * **Screech (Đã fix lỗi đường dẫn & icon):** Tự động tải ảnh bìa Boxart 3D trực tiếp trên máy qua Wi-Fi.
+  * **Refresh Best Collections (`BestBuilder`):** Tự động quét và làm mới 3 bộ sưu tập trong tab `BEST`.
+  * **Samba Server & EmuDrop:** Chép game không dây qua Wi-Fi và tải ROM trực tiếp trên máy.
+  * **File Manager (`DinguxCommander`):** Quản lý file trực tiếp trên máy (Bấm `Select` hoặc `X` -> `Quit` để thoát).
+  * **TermoTri50 & Led4TspS:** Theo dõi nhiệt độ/xung nhịp CPU và tùy biến hiệu ứng đèn LED RGB 2 cần Analog.
+  * **TSPS Pro Setup:** Ứng dụng kích hoạt lại toàn bộ cấu hình tối ưu chỉ với 1 nút bấm ngay trên máy.
+
+---
+
+## 🛠️ HƯỚNG DẪN CÀI ĐẶT (CÓ 2 CÁCH CỰC ĐƠN GIẢN)
+
+### Cách 1: Chép trực tiếp vào Thẻ nhớ MicroSD (Không cần ADB / Không cần biết lệnh)
+1. Tắt máy, tháo thẻ nhớ MicroSD cắm vào máy tính (hoặc kết nối qua Samba/USB).
+2. Mở thư mục **`SDCARD_Root`** trong gói tải về, **Copy toàn bộ các thư mục và file bên trong (`Apps`, `Best`, `Emus`, `RetroArch`, `Roms`, `System`, `Themes`, `RetroAchievements.txt`)** dán đè (`Replace all`) vào thư mục gốc của thẻ nhớ MicroSD.
+3. Cắm thẻ nhớ lại vào máy và bật nguồn:
+   * Ngay khi khởi động, máy sẽ **tự động chạy ngầm script kích hoạt** toàn bộ các bản vá 60Hz, Màu OLED-Like, Âm thanh, Đồ họa, Tay cầm, tạo 3 bộ sưu tập BEST và giải nén kho Cheat!
+   * Hoặc bạn có thể vào mục **App -> chọn `TSPS Pro Setup`** bất kỳ lúc nào (máy sẽ rung nhẹ 2 lần báo hiệu đã kích hoạt xong 100%).
+
+### Cách 2: Cài đặt 1-Click qua Cáp USB (Dành cho Windows)
+1. Bật máy Trimui Smart Pro S ở màn hình chính, vào **Settings -> System -> bật ON mục `USB Debugging`**.
+2. Cắm cáp USB vào **cổng USB-C bên dưới (Bottom Port)** nối với máy tính.
+3. Nhấp đúp chạy file **`Cai_Dat_1Click_Qua_Cap_USB.bat`** trong thư mục giải nén và bấm phím bất kỳ — công cụ sẽ tự động đẩy toàn bộ file vào máy và kích hoạt trong 1 nốt nhạc!
+
+### (Tùy chọn) Nâng cấp Firmware gốc lên bản `v1.0.1`
+* Kiểm tra trong `Settings -> System -> Device Info`, nếu máy bạn đang ở `1.0.0`:
+  1. Copy file `trimui_tg5050.awimg` trong thư mục **`Optional_Firmware_v1.0.1`** vào thư mục gốc của thẻ nhớ MicroSD.
+  2. Tắt nguồn máy hoàn toàn.
+  3. Giữ tổ hợp **`Nút Giảm Âm Lượng (Vol -)` + `Nút Nguồn (Power)`** khoảng 5 giây cho đến khi hiện thanh xanh lá cây cập nhật, đợi máy tự khởi động lại lên `1.0.1` rồi xóa file `trimui_tg5050.awimg` trên thẻ nhớ đi là xong.
