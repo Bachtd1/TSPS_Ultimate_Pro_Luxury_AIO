@@ -1,11 +1,11 @@
 # 🌟 [CHIA SẺ CỘNG ĐỒNG] GÓI NÂNG CẤP ALL-IN-ONE "ULTIMATE PRO & LUXURY v1.0" CHO TRIMUI SMART PRO S (TG5050)
 
-> **Tương thích:** Dành riêng cho **Trimui Smart Pro S (Mã máy `TG5050` - Chip 8 nhân Allwinner A523)** chạy Stock OS (`v1.0.0` hoặc `v1.0.1`).  
+> **Tương thích:** Dành riêng cho **Trimui Smart Pro S (Mã máy `TG5050` - Chip 8 nhân Allwinner A523)** chạy Stock OS (`v1.0.0` hoặc `v1.0.2`).  
 > **An toàn tuyệt đối:** Giữ nguyên 100% ROM, File Save và hỗ trợ hoàn hảo các máy có cài sẵn gói game Việt hóa (`LoongMate`).
 
 ---
 
-## 🔥 TỔNG HỢP 14 HẠNG MỤC NÂNG CẤP TRONG GÓI ALL-IN-ONE NÀY
+## 🔥 TỔNG HỢP 17 HẠNG MỤC NÂNG CẤP TRONG GÓI ALL-IN-ONE NÀY
 
 ### 1. Bản vá phần cứng Màn hình chuẩn `60.01 Hz` & Khóa xung RAM `1200 MHz` (Chống nháy/xé hình tuyệt đối)
 * **Fix lỗi 62.94 Hz của Stock OS:** Màn hình gốc của Trimui Smart Pro S bị lệch xung quét ở mức `62.94 Hz`, gây giật khung hình định kỳ (micro-stutter) và tiếng nổ lụp bụp khi chơi các hệ máy 60fps. Bản vá can thiệp trực tiếp vào thanh ghi phần cứng (`DSI_VT` & `TCON_VT`) đưa màn hình về đúng **`60.01 Hz`**, kèm tiến trình canh gác tự động khôi phục sau khi máy thức dậy từ chế độ Sleep.
@@ -71,6 +71,29 @@
   * **TermoTri50 & Led4TspS:** Theo dõi nhiệt độ/xung nhịp CPU và tùy biến hiệu ứng đèn LED RGB 2 cần Analog.
   * **TSPS Pro Setup:** Ứng dụng kích hoạt lại toàn bộ cấu hình tối ưu chỉ với 1 nút bấm ngay trên máy.
 
+### 14. Giữ nguyên Cài đặt khi Flash Firmware mới (Settings Vault) — Tương thích `v1.0.2`
+* Flash firmware sẽ xóa sạch bộ nhớ trong (`/mnt/UDISK`: màu, âm lượng, độ sáng, hiệu chỉnh cần Analog) và phân vùng hệ thống (danh sách Wi-Fi đã lưu). Gói TSPS tự **sao lưu các cài đặt này lên thẻ nhớ** (`System/etc/tsps_persist`) mỗi 5 phút.
+* Lần bật máy đầu tiên sau khi flash, máy **tự khôi phục** toàn bộ: màu DE350, âm lượng loa `29/31`, độ sáng, hiệu chỉnh cần Analog, Wi-Fi đã lưu... và **tự chạy lại toàn bộ bản vá TSPS** cho firmware mới — không cần cài lại.
+* Firmware `1.0.2` đã chuyển sang điều khiển âm lượng loa qua `speakergain` trong `system.json`; gói đã cập nhật để tăng âm lượng loa đúng cách trên `1.0.2` (vẫn tương thích `1.0.0`/`1.0.1`).
+
+### 15. Wi-Fi Guardian — Sửa lỗi "treo màn hình tìm Wi-Fi sau vài giờ dùng"
+* Kiểm tra sức khỏe Wi-Fi mỗi 30 giây: nếu `wpa_supplicant` bị treo/chết (lỗi khiến màn tìm Wi-Fi đứng im, trước đây phải flash lại firmware mới hết), máy **tự khởi động lại Wi-Fi** sau ~90 giây, không cần flash.
+* Khi bật máy: tự sửa file cấu hình Wi-Fi bị hỏng (do sập nguồn/sleep), gộp mạng trùng lặp, xóa socket cũ, dọn tiến trình `udhcpc` chồng chéo.
+* Nhật ký lỗi lưu tại `System/logs/tsps_wifi_guard.log` — nếu còn gặp lỗi, gửi file này để được hỗ trợ.
+
+### 16. Stick Fix — Sửa lỗi gạt cần Analog 180° quá nhanh không nhận
+* Dùng `trimui_inputd` bản "Universal Optimized" của CrossMix-OS (đọc cần qua inotify, nhẹ hơn: `0%` CPU so với `3%` bản gốc), tương thích đầy đủ Turbo / Đổi A-B / Hiệu chỉnh cần trong Settings của firmware gốc.
+* **Không sửa firmware**: chỉ gắn tạm trong RAM khi khởi động. Muốn quay về bản gốc: vào **App → `Stick Fix (inputd)`** (rung 1 lần = CrossMix, rung 2 lần = Gốc).
+* ⚠️ Sau khi flash firmware lần đầu, nên vào **Settings → hiệu chỉnh cần Analog** một lần (file hiệu chỉnh cũ bị firmware xóa; từ lần sau gói sẽ tự giữ lại).
+
+### 17. Ứng dụng mới chuyển từ Surwish CrossMix-OS (đã chỉnh để chạy trên firmware gốc)
+* **Music Player (Gmu):** nghe nhạc MP3/FLAC/OGG/MOD + radio Internet, chép nhạc vào thư mục `/Music`.
+* **Ebook Reader (PixelReader):** đọc `.epub` / `.txt`, chép sách vào `Apps/EbookReader/Books`.
+* **Terminal (SimpleTerminal):** dòng lệnh trực tiếp trên máy.
+* **Random Game:** chọn ngẫu nhiên 1 game trong máy kèm ảnh bìa (`A` chơi · `X` game khác · `B` thoát).
+* **EmuCleaner:** tự ẩn các hệ máy chưa có game và hiện lại khi bạn chép game vào.
+* **Reboot:** khởi động lại máy nhanh (tự lưu cài đặt trước khi khởi động lại).
+
 ---
 
 ## 🛠️ HƯỚNG DẪN CÀI ĐẶT (CÓ 2 CÁCH CỰC ĐƠN GIẢN)
@@ -87,8 +110,23 @@
 2. Cắm cáp USB vào **cổng USB-C bên dưới (Bottom Port)** nối với máy tính.
 3. Nhấp đúp chạy file **`Cai_Dat_1Click_Qua_Cap_USB.bat`** trong thư mục giải nén và bấm phím bất kỳ — công cụ sẽ tự động đẩy toàn bộ file vào máy và kích hoạt trong 1 nốt nhạc!
 
-### (Tùy chọn) Nâng cấp Firmware gốc lên bản `v1.0.1`
+### (Tùy chọn) Nâng cấp Firmware gốc lên bản `v1.0.2`
 * Kiểm tra trong `Settings -> System -> Device Info`, nếu máy bạn đang ở `1.0.0`:
-  1. Copy file `trimui_tg5050.awimg` trong thư mục **`Optional_Firmware_v1.0.1`** vào thư mục gốc của thẻ nhớ MicroSD.
+  1. Copy file `trimui_tg5050.awimg` trong thư mục **`Optional_Firmware_v1.0.2`** vào thư mục gốc của thẻ nhớ MicroSD.
   2. Tắt nguồn máy hoàn toàn.
-  3. Giữ tổ hợp **`Nút Giảm Âm Lượng (Vol -)` + `Nút Nguồn (Power)`** khoảng 5 giây cho đến khi hiện thanh xanh lá cây cập nhật, đợi máy tự khởi động lại lên `1.0.1` rồi xóa file `trimui_tg5050.awimg` trên thẻ nhớ đi là xong.
+  3. Giữ tổ hợp **`Nút Giảm Âm Lượng (Vol -)` + `Nút Nguồn (Power)`** khoảng 5 giây cho đến khi hiện thanh xanh lá cây cập nhật, đợi máy tự khởi động lại lên `1.0.2` rồi xóa file `trimui_tg5050.awimg` trên thẻ nhớ đi là xong.
+
+## 🎮 BIOS (không kèm trong gói — bạn tự chuẩn bị)
+Gói **không chứa BIOS/ROM** vì lý do bản quyền. Một số hệ máy (PS1, GBA boot logo, NeoGeo, Sega CD, PC Engine CD, Dreamcast, MSX...) cần BIOS:
+1. **Cách nhanh nhất:** tải gói **CrossMix-OS / Surwish CrossMix** chính thức, mở thư mục `BIOS` trong gói đó.
+2. Chép **toàn bộ file bên trong** `BIOS` vào thẻ nhớ TSPS tại: **`RetroArch/.retroarch/system/`** (không phải thư mục `/BIOS` ở gốc thẻ).
+3. Một số file quan trọng (đặt đúng tên, đúng chữ hoa/thường): `scph5501.bin`, `scph1001.bin` (PS1) · `gba_bios.bin` (GBA) · `neogeo.zip` (NeoGeo/FBNeo) · `bios_CD_U.bin`, `bios_CD_E.bin`, `bios_CD_J.bin` (Sega CD) · `syscard3.pce` (PC Engine CD) · `dc/dc_boot.bin`, `dc/dc_flash.bin` (Dreamcast).
+
+## 🔁 Khi nâng cấp / flash Firmware mới
+* Cứ flash bình thường. Lần bật máy đầu tiên sau flash sẽ **lâu hơn ~20 giây** vì gói tự khôi phục cài đặt và áp lại bản vá — các lần sau khởi động bình thường (~20 giây).
+* Nhớ **xóa file `trimui_tg5050.awimg` khỏi thẻ nhớ** sau khi cập nhật xong.
+* Nếu cần áp lại thủ công: **App → `TSPS Pro Setup`**.
+
+## 🙏 Ghi công
+* **CrossMix-OS** (cizia64 & cộng đồng) và **Surwish**: `trimui_inputd` Universal Optimized, EmuCleaner, Random Game, Terminal/Music/Ebook launcher, `infoscreen`.
+* **Gmu Music Player**, **PixelReader**, **SimpleTerminal**, **PortMaster** (`gptokeyb`), **DejaVu Fonts** — thuộc về tác giả tương ứng, giữ nguyên giấy phép gốc.

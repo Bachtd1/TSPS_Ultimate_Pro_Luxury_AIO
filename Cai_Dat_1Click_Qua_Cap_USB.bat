@@ -27,7 +27,7 @@ echo.
 echo [2/4] Dang day toan bo tap tin nang cap (RetroArch 1.22.2, Apps, Themes, Icons, Cheats) len the nho...
 "%ADB%" push "%SDROOT%\System" /mnt/SDCARD/
 "%ADB%" push "%SDROOT%\Apps" /mnt/SDCARD/
-"%ADB%" push "%SDROOT%\Best" /mnt/SDCARD/
+if exist "%SDROOT%\Best" "%ADB%" push "%SDROOT%\Best" /mnt/SDCARD/
 "%ADB%" push "%SDROOT%\Emus" /mnt/SDCARD/
 "%ADB%" push "%SDROOT%\RetroArch" /mnt/SDCARD/
 "%ADB%" push "%SDROOT%\Roms" /mnt/SDCARD/
@@ -39,8 +39,8 @@ echo [3/4] Dang kich hoat ban va 60.01Hz, Am thanh 3 tang DAC, Do hoa True Vivid
 "%ADB%" shell "chmod +x /mnt/SDCARD/System/starts/tsps_pro_setup.sh /mnt/SDCARD/System/starts/loongmate.sh && /bin/sh /mnt/SDCARD/System/starts/tsps_pro_setup.sh --force"
 
 echo.
-echo [4/4] Hoan tat dong bo du lieu xuong the nho (sync)...
-"%ADB%" shell "sync"
+echo [4/4] Dong bo du lieu va khoi dong lai giao dien (nap mau/am thanh moi)...
+"%ADB%" shell "sync; killall -9 MainUI"
 
 echo.
 echo ============================================================================
