@@ -36,7 +36,7 @@ echo [2/4] Dang day toan bo tap tin nang cap (RetroArch 1.22.2, Apps, Themes, Ic
 
 echo.
 echo [3/4] Dang kich hoat ban va 60.01Hz, Am thanh 3 tang DAC, Do hoa True Vivid RGB ^& Pro/Luxury Tweaks...
-"%ADB%" shell "chmod +x /mnt/SDCARD/System/starts/tsps_pro_setup.sh /mnt/SDCARD/System/starts/loongmate.sh && /bin/sh /mnt/SDCARD/System/starts/tsps_pro_setup.sh"
+"%ADB%" shell "chmod +x /mnt/SDCARD/System/starts/tsps_pro_setup.sh /mnt/SDCARD/System/starts/loongmate.sh && /bin/sh /mnt/SDCARD/System/starts/tsps_pro_setup.sh --force"
 
 echo.
 echo [4/4] Hoan tat dong bo du lieu xuong the nho (sync)...
