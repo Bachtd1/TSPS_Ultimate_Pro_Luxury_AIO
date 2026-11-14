@@ -106,6 +106,9 @@
 * App **PortMaster** (giao diện chính thức, giấy phép MIT) chạy trên firmware gốc 1.0.2. Cần Wi-Fi để tải game.
 * **Tự động đồng bộ:** game tải xong sẽ tự xuất hiện trong tab **Ports** của máy (kèm tên, ảnh bìa, xung nhịp 2.16 GHz) ngay khi thoát PortMaster; gỡ game trong PortMaster thì mục tương ứng cũng tự biến mất.
 * Dùng chung runtime (Mono, Godot) với các game Port có sẵn, không tốn thêm ~300 MB thẻ nhớ.
+* **Lớp tương thích cho firmware gốc:** TSPS bổ sung những thứ script PortMaster cần mà firmware không có (`pkill`, đường dẫn RetroArch, `/dev/shm`, thư viện XML cho Python) — không sửa firmware, mất khi tắt máy và tự tạo lại khi chơi.
+* **App `Port Doctor` (mới):** kiểm tra mọi game trong `Data/ports` và báo **vì sao không chạy**: thiếu runtime (Mono, Godot, AGS…), thiếu file game gốc (kèm hướng dẫn chép file của chính port đó), file `.sh` bị lỗi xuống dòng khi chép từ Windows, port không hỗ trợ CPU/glibc của máy, thiếu thư viện `.so`, lỗi trong `log.txt` lần chạy trước, chưa hiện trong tab Ports. Bấm `Y` để **tự sửa**: đổi xuống dòng, đồng bộ tab Ports, tải runtime còn thiếu (cần Wi-Fi).
+* Tự chép game PortMaster từ máy tính: bỏ file `.sh` và thư mục game vào `Data/ports`, rồi mở **Port Doctor** để kiểm tra & đưa vào tab Ports.
 
 ### 19. TSPS Save Vault — Sao lưu & khôi phục toàn bộ Save Game (mới v1.2)
 * App **TSPS Save Vault**: bấm `A` để sao lưu save của RetroArch, PSP, NDS, Dreamcast, N64 vào `Backups/Saves` (giữ 2 bản mới nhất).
