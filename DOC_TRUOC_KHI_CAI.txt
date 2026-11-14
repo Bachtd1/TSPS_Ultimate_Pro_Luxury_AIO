@@ -1,11 +1,11 @@
-# 🌟 [CHIA SẺ CỘNG ĐỒNG] GÓI NÂNG CẤP ALL-IN-ONE "ULTIMATE PRO & LUXURY v1.1.1" CHO TRIMUI SMART PRO S (TG5050)
+# 🌟 [CHIA SẺ CỘNG ĐỒNG] GÓI NÂNG CẤP ALL-IN-ONE "ULTIMATE PRO & LUXURY v1.2.0" CHO TRIMUI SMART PRO S (TG5050)
 
 > **Tương thích:** Dành riêng cho **Trimui Smart Pro S (Mã máy `TG5050` - Chip 8 nhân Allwinner A523)** chạy Stock OS (`v1.0.0` hoặc `v1.0.2`).  
 > **An toàn tuyệt đối:** Giữ nguyên 100% ROM, File Save và hỗ trợ hoàn hảo các máy có cài sẵn gói game Việt hóa (`LoongMate`).
 
 ---
 
-## 🔥 TỔNG HỢP 17 HẠNG MỤC NÂNG CẤP TRONG GÓI ALL-IN-ONE NÀY
+## 🔥 TỔNG HỢP 20 HẠNG MỤC NÂNG CẤP TRONG GÓI ALL-IN-ONE NÀY
 
 ### 1. Bản vá phần cứng Màn hình chuẩn `60.01 Hz` & Khóa xung RAM `1200 MHz` (Chống nháy/xé hình tuyệt đối)
 * **Fix lỗi 62.94 Hz của Stock OS:** Màn hình gốc của Trimui Smart Pro S bị lệch xung quét ở mức `62.94 Hz`, gây giật khung hình định kỳ (micro-stutter) và tiếng nổ lụp bụp khi chơi các hệ máy 60fps. Bản vá can thiệp trực tiếp vào thanh ghi phần cứng (`DSI_VT` & `TCON_VT`) đưa màn hình về đúng **`60.01 Hz`**, kèm tiến trình canh gác tự động khôi phục sau khi máy thức dậy từ chế độ Sleep.
@@ -77,7 +77,7 @@
   * Toàn bộ `/mnt/UDISK`: màu DE350, âm lượng, độ sáng, ngôn ngữ, chủ đề, **hiệu chỉnh cần Analog**, chế độ hiệu năng Ports, dữ liệu app.
   * **Wi-Fi đã lưu** và **tay cầm Bluetooth đã ghép đôi**.
   * `system.json` được gộp thông minh: giữ giá trị của bạn + giữ tính năng mới của firmware.
-* **App `TSPS Health Check`:** kiểm tra 17 hạng mục, báo `x/17 OK`; nếu có lỗi bấm `Y` để áp lại tất cả. Chi tiết: `System/logs/tsps_status.txt`.
+* **App `TSPS Health Check`:** kiểm tra 20 hạng mục, báo `x/20 OK`; nếu có lỗi bấm `Y` để áp lại tất cả. Chi tiết: `System/logs/tsps_status.txt`.
 * Firmware `1.0.2` điều khiển âm lượng loa qua `speakergain`; gói đã cập nhật để tăng loa đúng cách (vẫn tương thích `1.0.0`/`1.0.1`).
 * **v1.1.1 – N64 hết tràn khung hình** (Mupen64Plus GLES2 & ParaLLEl N64 chạy toàn màn hình đúng 1280×720, khung 4:3).
 * **v1.1.1 – Nhắc hiệu chỉnh cần Analog:** sau khi flash, nếu cần chưa được hiệu chỉnh, máy hiện màn hình hướng dẫn 1 lần (tự đóng sau 8 giây).
@@ -101,6 +101,22 @@
 * **Random Game:** chọn ngẫu nhiên 1 game trong máy kèm ảnh bìa (`A` chơi · `X` game khác · `B` thoát).
 * **EmuCleaner:** tự ẩn các hệ máy chưa có game và hiện lại khi bạn chép game vào.
 * **Reboot:** khởi động lại máy nhanh (tự lưu cài đặt trước khi khởi động lại).
+
+### 18. PortMaster — Tải hàng trăm game PC Port trực tiếp trên máy (mới v1.2)
+* App **PortMaster** (giao diện chính thức, giấy phép MIT) chạy trên firmware gốc 1.0.2. Cần Wi-Fi để tải game.
+* **Tự động đồng bộ:** game tải xong sẽ tự xuất hiện trong tab **Ports** của máy (kèm tên, ảnh bìa, xung nhịp 2.16 GHz) ngay khi thoát PortMaster; gỡ game trong PortMaster thì mục tương ứng cũng tự biến mất.
+* Dùng chung runtime (Mono, Godot) với các game Port có sẵn, không tốn thêm ~300 MB thẻ nhớ.
+
+### 19. TSPS Save Vault — Sao lưu & khôi phục toàn bộ Save Game (mới v1.2)
+* App **TSPS Save Vault**: bấm `A` để sao lưu save của RetroArch, PSP, NDS, Dreamcast, N64 vào `Backups/Saves` (giữ 2 bản mới nhất).
+* Bấm `Y` → xác nhận bằng `START` để khôi phục bản mới nhất. **Save hiện tại luôn được tự sao lưu trước** vào `Backups/Saves/Before_Restore`, nên có thể hoàn tác.
+* Tự kiểm tra chỗ trống thẻ nhớ và kiểm tra file sao lưu đọc được trước khi báo thành công. (Savestate PSP không được sao lưu vì rất nặng — save game PSP thì có.)
+
+### 20. Chuẩn hóa hiển thị cho mọi hệ máy & khóa 60,01 Hz chặt hơn (mới v1.2)
+* RetroArch chạy toàn màn hình đúng 1280×720 cho mọi core (hết tràn khung kiểu N64), tỷ lệ chuẩn từng nhóm máy: 4:3 cho máy TV/3D, tỷ lệ gốc cho máy cầm tay, tự động ngang/dọc cho Arcade.
+* RetroArch đồng bộ đúng tần số 60,010201 Hz của màn hình; khi vào game, khóa 60,01 Hz được áp lại ngay trong 1–2 giây.
+* Sửa: OpenBOR không mở được, N64 Standalone (Rice/Glide64) thiếu thư viện, PPSSPP "High Performance" thiếu cấu hình tay cầm. N64 Standalone đọc được ROM nén `.zip`/`.7z`.
+* Health Check kiểm tra **20 hạng mục**.
 
 ---
 
@@ -135,7 +151,7 @@ Gói **không chứa BIOS/ROM** vì lý do bản quyền. Một số hệ máy (
 ## 🔁 Khi nâng cấp / flash Firmware mới
 * Cứ flash bình thường. Lần bật máy đầu tiên sau flash sẽ **lâu hơn ~20 giây** vì gói tự khôi phục cài đặt và áp lại bản vá — các lần sau khởi động bình thường (~20 giây).
 * Nhớ **xóa file `trimui_tg5050.awimg` khỏi thẻ nhớ** sau khi cập nhật xong.
-* Sau khi máy lên, mở **App → `TSPS Health Check`** để xác nhận mọi thứ đã được khôi phục (`17/17 OK`). Nếu có mục lỗi, bấm `Y` để áp lại.
+* Sau khi máy lên, mở **App → `TSPS Health Check`** để xác nhận mọi thứ đã được khôi phục (`20/20 OK`). Nếu có mục lỗi, bấm `Y` để áp lại.
 * Dòng *LƯU Ý* màu vàng về cần Analog nghĩa là bạn **chưa từng** hiệu chỉnh cần: vào **Settings → hiệu chỉnh cần Analog** một lần, từ đó gói sẽ tự giữ lại qua mọi lần flash.
 
 ## 🙏 Ghi công
