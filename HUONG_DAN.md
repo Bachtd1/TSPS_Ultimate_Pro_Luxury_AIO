@@ -31,7 +31,7 @@ Gói **không chứa BIOS/ROM** vì lý do bản quyền. Một số hệ máy (
 ## 🔁 Khi nâng cấp / flash Firmware mới
 * Cứ flash bình thường. Lần bật máy đầu tiên sau flash sẽ **lâu hơn ~20 giây** vì gói tự khôi phục cài đặt và áp lại bản vá — các lần sau khởi động bình thường (~20 giây).
 * Nhớ **xóa file `trimui_tg5050.awimg` khỏi thẻ nhớ** sau khi cập nhật xong.
-* Sau khi máy lên, mở **App → `TSPS Health Check`** để xác nhận mọi thứ đã được khôi phục (`16/16 OK`). Nếu có mục lỗi, bấm `Y` để áp lại.
+* Sau khi máy lên, mở **App → `TSPS Health Check`** để xác nhận mọi thứ đã được khôi phục (`17/17 OK`). Nếu có mục lỗi, bấm `Y` để áp lại.
 * Dòng *LƯU Ý* màu vàng về cần Analog nghĩa là bạn **chưa từng** hiệu chỉnh cần: vào **Settings → hiệu chỉnh cần Analog** một lần, từ đó gói sẽ tự giữ lại qua mọi lần flash.
 
 ## 🙏 Ghi công

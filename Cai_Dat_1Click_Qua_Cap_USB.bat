@@ -4,7 +4,7 @@ title TRIMUI SMART PRO S (TG5050) - ULTIMATE PRO & LUXURY 1-CLICK INSTALLER
 color 0B
 
 echo ============================================================================
-echo    TRIMUI SMART PRO S (TG5050) - GOI NANG CAP ALL-IN-ONE PRO ^& LUXURY v1.1
+echo    TRIMUI SMART PRO S (TG5050) - GOI NANG CAP ALL-IN-ONE PRO ^& LUXURY v1.1.1
 echo ============================================================================
 echo.
 echo  Huong dan ket noi:

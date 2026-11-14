@@ -1,4 +1,4 @@
-# 🌟 [CHIA SẺ CỘNG ĐỒNG] GÓI NÂNG CẤP ALL-IN-ONE "ULTIMATE PRO & LUXURY v1.1" CHO TRIMUI SMART PRO S (TG5050)
+# 🌟 [CHIA SẺ CỘNG ĐỒNG] GÓI NÂNG CẤP ALL-IN-ONE "ULTIMATE PRO & LUXURY v1.1.1" CHO TRIMUI SMART PRO S (TG5050)
 
 > **Tương thích:** Dành riêng cho **Trimui Smart Pro S (Mã máy `TG5050` - Chip 8 nhân Allwinner A523)** chạy Stock OS (`v1.0.0` hoặc `v1.0.2`).  
 > **An toàn tuyệt đối:** Giữ nguyên 100% ROM, File Save và hỗ trợ hoàn hảo các máy có cài sẵn gói game Việt hóa (`LoongMate`).
@@ -77,8 +77,10 @@
   * Toàn bộ `/mnt/UDISK`: màu DE350, âm lượng, độ sáng, ngôn ngữ, chủ đề, **hiệu chỉnh cần Analog**, chế độ hiệu năng Ports, dữ liệu app.
   * **Wi-Fi đã lưu** và **tay cầm Bluetooth đã ghép đôi**.
   * `system.json` được gộp thông minh: giữ giá trị của bạn + giữ tính năng mới của firmware.
-* **App `TSPS Health Check`:** kiểm tra 16 hạng mục, báo `x/16 OK`; nếu có lỗi bấm `Y` để áp lại tất cả. Chi tiết: `System/logs/tsps_status.txt`.
+* **App `TSPS Health Check`:** kiểm tra 17 hạng mục, báo `x/17 OK`; nếu có lỗi bấm `Y` để áp lại tất cả. Chi tiết: `System/logs/tsps_status.txt`.
 * Firmware `1.0.2` điều khiển âm lượng loa qua `speakergain`; gói đã cập nhật để tăng loa đúng cách (vẫn tương thích `1.0.0`/`1.0.1`).
+* **v1.1.1 – N64 hết tràn khung hình** (Mupen64Plus GLES2 & ParaLLEl N64 chạy toàn màn hình đúng 1280×720, khung 4:3).
+* **v1.1.1 – Nhắc hiệu chỉnh cần Analog:** sau khi flash, nếu cần chưa được hiệu chỉnh, máy hiện màn hình hướng dẫn 1 lần (tự đóng sau 8 giây).
 * **Sửa shader làm nét / CRT:** bản v1.0 tạo preset shader trỏ sai thư mục nên shader không được áp dụng; bản mới sửa đường dẫn và tự sửa các preset cũ khi bật máy.
 * **Sửa xung đột với LoongMate / Tailscale:** bản v1.0 ghi đè file tự khởi động `loongmate.sh` và tắt agent LoongMate khi thoát app. Bản mới dùng file riêng `tsps_guardian.sh`, **tự trả lại** file gốc của LoongMate và gỡ đoạn mã gây xung đột.
 
@@ -133,7 +135,7 @@ Gói **không chứa BIOS/ROM** vì lý do bản quyền. Một số hệ máy (
 ## 🔁 Khi nâng cấp / flash Firmware mới
 * Cứ flash bình thường. Lần bật máy đầu tiên sau flash sẽ **lâu hơn ~20 giây** vì gói tự khôi phục cài đặt và áp lại bản vá — các lần sau khởi động bình thường (~20 giây).
 * Nhớ **xóa file `trimui_tg5050.awimg` khỏi thẻ nhớ** sau khi cập nhật xong.
-* Sau khi máy lên, mở **App → `TSPS Health Check`** để xác nhận mọi thứ đã được khôi phục (`16/16 OK`). Nếu có mục lỗi, bấm `Y` để áp lại.
+* Sau khi máy lên, mở **App → `TSPS Health Check`** để xác nhận mọi thứ đã được khôi phục (`17/17 OK`). Nếu có mục lỗi, bấm `Y` để áp lại.
 * Dòng *LƯU Ý* màu vàng về cần Analog nghĩa là bạn **chưa từng** hiệu chỉnh cần: vào **Settings → hiệu chỉnh cần Analog** một lần, từ đó gói sẽ tự giữ lại qua mọi lần flash.
 
 ## 🙏 Ghi công
