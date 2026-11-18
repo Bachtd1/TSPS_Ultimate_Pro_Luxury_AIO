@@ -1,4 +1,4 @@
-# TSPS Ultimate Pro & Luxury AIO v1.2.0
+# TSPS Ultimate Pro & Luxury AIO v1.2.1
 
 Gói nâng cấp All-in-One cho **Trimui Smart Pro S (TG5050)** chạy Stock OS `v1.0.0` / `v1.0.2`.
 
@@ -8,7 +8,7 @@ Vào mục **[Releases](../../releases/latest)** và tải:
 
 | File | Mô tả |
 |---|---|
-| `TSPS_Ultimate_Pro_Luxury_AIO_v1.2.0.zip` | Gói đầy đủ (SDCARD_Root + công cụ ADB + script cài 1-Click) |
+| `TSPS_Ultimate_Pro_Luxury_AIO_v1.2.1.zip` | Gói đầy đủ (SDCARD_Root + công cụ ADB + script cài 1-Click) |
 | `trimui_tg5050.awimg` | *(Tùy chọn)* Firmware gốc `v1.0.2` — chỉ cần nếu máy đang ở `1.0.0` / `1.0.1` |
 
 Giải nén file zip rồi làm theo hướng dẫn bên dưới. Chi tiết 20 hạng mục nâng cấp xem trong [DOC_TRUOC_KHI_CAI.txt](DOC_TRUOC_KHI_CAI.txt).

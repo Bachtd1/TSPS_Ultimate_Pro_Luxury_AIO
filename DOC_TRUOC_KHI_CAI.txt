@@ -1,4 +1,4 @@
-# 🌟 [CHIA SẺ CỘNG ĐỒNG] GÓI NÂNG CẤP ALL-IN-ONE "ULTIMATE PRO & LUXURY v1.2.0" CHO TRIMUI SMART PRO S (TG5050)
+# 🌟 [CHIA SẺ CỘNG ĐỒNG] GÓI NÂNG CẤP ALL-IN-ONE "ULTIMATE PRO & LUXURY v1.2.1" CHO TRIMUI SMART PRO S (TG5050)
 
 > **Tương thích:** Dành riêng cho **Trimui Smart Pro S (Mã máy `TG5050` - Chip 8 nhân Allwinner A523)** chạy Stock OS (`v1.0.0` hoặc `v1.0.2`).  
 > **An toàn tuyệt đối:** Giữ nguyên 100% ROM, File Save và hỗ trợ hoàn hảo các máy có cài sẵn gói game Việt hóa (`LoongMate`).
